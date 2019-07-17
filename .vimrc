@@ -58,10 +58,6 @@ set wildignorecase
 " Ignore complied files and files in version control
 set wildignore=*.o,*~,*.pyc,*/.git/*,*/.svn/*
 
-" Change colorscheme
-colorscheme darkblue
-" colorscheme gruvbox
-
 set expandtab       " Expand tabs to spaces
 set tabstop=4       " Number of spaces tab is counted for
 set shiftwidth=4    " Number of spaces to use for autoindent
@@ -99,6 +95,12 @@ nn - zc 		" - closes the fold
 nn + zo 		" + (or l) opens the fold
 set foldcolumn=0 	" No folds by default, (columns start with 0)
 
+" Flag unnecessary whitespace
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Highlight all syntax
+autocmd BufRead,BufNewFile *.py let python_highlight_all=1
+
 " Delete trailing white space on save, useful for Python
 func! DeleteTrailingWS()
   exe "normal mz"
@@ -117,7 +119,8 @@ map ,id $a<CR>import ipdb; ipdb.set_trace()<ESC>
 map ,dd <ESC>:g/import ipdb; ipdb.set_trace()/d<CR>
 
 
-" ==> Plugin manager (vim-plug): (:PlugInstall to install/update plugins)
+" ==> Plugin manager (vim-plug): ================= {{{
+" (:PlugInstall to install/update plugins)
 " filetype off, filetype plugin indent on, syntax on are all handled by
 " vim-plug, so can be removed from .vimrc script above
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
@@ -130,15 +133,39 @@ endif
 " Load all plugins needed (use single quotes)
 call plug#begin('~/.vim/plugged')
 " Load utilsnips and YouCompleteMe plugins (very useful for Python)
-Plug 'SirVer/ultisnips', { 'on': [] }
-Plug 'Valloric/YouCompleteMe', { 'on': [] }
 
-augroup load_us_ycm
-  autocmd!
-    autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
-                         \| autocmd! load_us_ycm
-                         augroup END
+Plug 'SirVer/ultisnips'             " Ultimate snippet solution for Vim
+" Plug 'Valloric/YouCompleteMe'
+Plug 'junegunn/seoul256.vim'        " colorscheme
+Plug 'vim-syntastic/syntastic'      " Check Python syntax when saving
+Plug 'nvie/vim-flake8'              " PEP8 checking
+" Plug 'itchyny/lightline.vim'        " Show details of file on last line
+Plug 'Lokaltog/powerline'           " Show details of file on last line
+Plug 'ctrlpvim/ctrlp.vim'           " Shows files in current dir
+Plug 'junegunn/fzf'                 " Fuzzy finder (better than ctrlp)
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'          " Shows Tree of current dir
+Plug 'airblade/vim-gitgutter'       " Shows number of lines changed
+
+" Plug 'SirVer/ultisnips', { 'on': [] }
+" Plug 'Valloric/YouCompleteMe', { 'on': [] }
+" augroup load_us_ycm
+"   autocmd!
+"     autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
+"                          \| autocmd! load_us_ycm
+"                          augroup END
 " Plug 'scrooloose/nerdtree', {'on': NERDTreeToggle'}
 
 call plug#end()
+
+" Change colorscheme
+" colorscheme darkblue
+let g:seoul256_background = 233       " Change numbers 233 (Darkest) to 239 (lightest)
+colorscheme seoul256
+" set background=dark
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
