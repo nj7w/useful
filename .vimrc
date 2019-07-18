@@ -120,7 +120,7 @@ map ,dd <ESC>:g/import ipdb; ipdb.set_trace()/d<CR>
 
 
 " ==> Plugin manager (vim-plug): ================= {{{
-" (:PlugInstall to install/update plugins)
+" (:PlugInstall to install/update plugins), :PlugClean to delete
 " filetype off, filetype plugin indent on, syntax on are all handled by
 " vim-plug, so can be removed from .vimrc script above
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
@@ -132,12 +132,12 @@ endif
 
 " Load all plugins needed (use single quotes)
 call plug#begin('~/.vim/plugged')
-Plug 'davidhalter/jedi-vim'         " auto complete in Python 
+Plug 'davidhalter/jedi-vim'         " auto complete in Python
 " Load utilsnips and YouCompleteMe plugins (very useful for Python)
 " Plug 'SirVer/ultisnips'             " Ultimate snippet solution for Vim
 " Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/seoul256.vim'        " colorscheme
-Plug 'vim-syntastic/syntastic'      " Check Python syntax when saving
+" Plug 'vim-syntastic/syntastic'      " Check Python syntax when saving
 Plug 'nvie/vim-flake8'              " PEP8 checking
 " Plug 'itchyny/lightline.vim'        " Show details of file on last line
 Plug 'Lokaltog/powerline'           " Show details of file on last line
