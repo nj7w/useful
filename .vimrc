@@ -132,7 +132,7 @@ endif
 
 " Load all plugins needed (use single quotes)
 call plug#begin('~/.vim/plugged')
-Plug 'davidhalter/jedi-vim'         " auto complete in Python
+" Plug 'davidhalter/jedi-vim'         " auto complete in Python
 " Load utilsnips and YouCompleteMe plugins (very useful for Python)
 " Plug 'SirVer/ultisnips'             " Ultimate snippet solution for Vim
 " Plug 'Valloric/YouCompleteMe'
