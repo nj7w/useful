@@ -39,6 +39,12 @@ git clone https://github.com/nj7w/useful.git
 # Ubuntu related stuff
 sudo apt install unity-tweak-tool fonts-inconsolata
 
+# Change terminal color to black:
+# Terminal -> Preferences -> (Select a Profile):
+#  Under Colors tab: uncheck 'Use colors from systems theme' then
+# Built-in schemes: Select 'White on black' from dropdown
+
+
 # Launch unity-tweak-tool (search on top left)
 # Overview -> Appearance -> Fonts:
 #     Monospace font: Inconsolata Medium 9
