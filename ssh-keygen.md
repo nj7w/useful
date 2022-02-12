@@ -42,19 +42,19 @@ remote server.
 - First, send the public key via FTP, SFTP, or even by email as an 
 attachment. Example, to transfer the file to the remote machine using SCP, execute 
 ```
-scp ~/.ssh/id_rsa.pub username@remotehost:mynewkey.pub
+scp ~/.ssh/rsa_key_do_4096.pub username@remotehost:.
 ```
 
 - Next, to post it on the remote machine, append the key to `~/.ssh/authorized_keys`.
 Example, on the remote machine:
 ```
-cat ~/mynewkey.pub >> ~/.ssh/authorized_keys
+cat ~/rsa_key_do_4096.pub >> ~/.ssh/authorized_keys
 ```
 
 Then, we can delete the public key from the remote machine, as it is already added
 to the `authorized_keys`:
 ```
-rm ~/mynewkey.pub
+rm ~/rsa_key_do_4096.pub
 ```
 
 **Do NOT post private key**
