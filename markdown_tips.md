@@ -75,3 +75,6 @@
   <https://www.markdownguide.org>  
   <fake@example.com>
   
+## Colors, alignment and other useful tips:
+
+- Look at this [link](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
