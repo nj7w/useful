@@ -78,3 +78,7 @@
 ## Colors, alignment and other useful tips:
 
 - Look at this [link](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+
+## MathJax 3 components:
+
+- Useful [link](http://docs.mathjax.org/en/latest/options/output/chtml.html?highlight=displayalign#the-configuration-block)
